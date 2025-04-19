@@ -1,0 +1,73 @@
+transaction_id,date,description,amount,account,category
+TX783481,2025-04-19,Freelance Transfer,2608.52,Savings,Income
+TX159142,2025-04-18,Salary Payment,1698.03,Savings,Income
+TX595084,2025-04-18,Gym NZ Ltd,-185.62,Visa Debit,Fitness
+TX447652,2025-04-17,ASB Visa Debit,-84.06,Savings,General Spending
+TX577348,2025-04-16,Netflix.com,-187.35,Visa Debit,Subscriptions
+TX144668,2025-04-16,Netflix.com,-12.48,Credit Card,Subscriptions
+TX396901,2025-04-16,IRD Refund,2135.02,Savings,Income
+TX993663,2025-04-16,Apple iCloud,-198.65,Visa Debit,Subscriptions
+TX477558,2025-04-15,Spotify AU,-32.66,Visa Debit,Entertainment
+TX802034,2025-04-15,New World Wellington,-79.8,Savings,Groceries
+TX502510,2025-04-15,Netflix.com,-171.66,Savings,Subscriptions
+TX655812,2025-04-14,Countdown Mt Eden,-112.35,Savings,Groceries
+TX147542,2025-04-13,Countdown Mt Eden,-40.18,Credit Card,Groceries
+TX386780,2025-04-12,Netflix.com,-110.3,ANZ Everyday,Subscriptions
+TX820176,2025-04-12,Gym NZ Ltd,-183.98,Credit Card,Fitness
+TX419968,2025-04-11,ASB Visa Debit,-28.26,Visa Debit,General Spending
+TX120620,2025-04-10,BP Fuel Auckland,-107.82,Visa Debit,Transport
+TX199560,2025-04-09,Spotify AU,-150.17,Savings,Entertainment
+TX752167,2025-04-09,IRD Refund,1699.44,ANZ Everyday,Income
+TX499178,2025-04-08,IRD Refund,1033.02,ANZ Everyday,Income
+TX308721,2025-04-08,Chemist Warehouse,-25.99,Visa Debit,Healthcare
+TX315456,2025-04-08,Chemist Warehouse,-140.56,Credit Card,Healthcare
+TX287819,2025-04-08,Noel Leeming,-189.35,Savings,Electronics
+TX226458,2025-04-07,Apple iCloud,-192.01,Visa Debit,Subscriptions
+TX457255,2025-04-07,Z Energy Newtown,-178.49,Savings,Transport
+TX854745,2025-04-07,Netflix.com,-111.12,Visa Debit,Subscriptions
+TX403766,2025-04-06,Salary Payment,1947.75,ANZ Everyday,Income
+TX569776,2025-04-05,Gym NZ Ltd,-102.79,Visa Debit,Fitness
+TX669663,2025-04-05,Countdown Mt Eden,-175.79,Savings,Groceries
+TX233124,2025-04-04,ASB Visa Debit,-127.48,Visa Debit,General Spending
+TX474801,2025-04-04,Z Energy Newtown,-129.73,Credit Card,Transport
+TX337312,2025-04-04,ASB Visa Debit,-64.58,Visa Debit,General Spending
+TX875446,2025-04-04,Dominos NZ,-170.35,Credit Card,Food Delivery
+TX490639,2025-04-03,BP Fuel Auckland,-31.51,ANZ Everyday,Transport
+TX545256,2025-04-03,Spotify AU,-138.46,Visa Debit,Entertainment
+TX586132,2025-04-03,BP Fuel Auckland,-149.2,Savings,Transport
+TX933184,2025-04-02,New World Wellington,-170.94,Visa Debit,Groceries
+TX678751,2025-04-02,Countdown Mt Eden,-47.62,Visa Debit,Groceries
+TX531858,2025-04-02,Netflix.com,-194.09,ANZ Everyday,Subscriptions
+TX868802,2025-04-02,ANZ Home Loan,-188.06,Savings,Rent/Mortgage
+TX748759,2025-04-01,Apple iCloud,-9.66,Visa Debit,Subscriptions
+TX349515,2025-04-01,BP Fuel Auckland,-40.18,Savings,Transport
+TX867523,2025-04-01,Warehouse Stationery,-81.54,Savings,Office/School Supplies
+TX424092,2025-03-31,Noel Leeming,-17.44,ANZ Everyday,Electronics
+TX334369,2025-03-31,Pak'nSave Hamilton,-173.78,ANZ Everyday,Groceries
+TX850242,2025-03-31,Gym NZ Ltd,-103.0,Savings,Fitness
+TX519206,2025-03-30,Z Energy Newtown,-51.41,Savings,Transport
+TX490909,2025-03-30,Freelance Transfer,667.52,ANZ Everyday,Income
+TX851189,2025-03-30,ANZ Home Loan,-195.75,Credit Card,Rent/Mortgage
+TX252479,2025-03-30,Warehouse Stationery,-183.78,Credit Card,Office/School Supplies
+TX183114,2025-03-29,ANZ Home Loan,-192.44,Savings,Rent/Mortgage
+TX796503,2025-03-28,Salary Payment,656.55,Savings,Income
+TX872705,2025-03-28,Countdown Mt Eden,-164.4,ANZ Everyday,Groceries
+TX466483,2025-03-27,Pak'nSave Hamilton,-49.97,ANZ Everyday,Groceries
+TX280516,2025-03-26,Chemist Warehouse,-58.47,ANZ Everyday,Healthcare
+TX120418,2025-03-26,Netflix.com,-39.26,ANZ Everyday,Subscriptions
+TX311780,2025-03-26,Z Energy Newtown,-178.86,ANZ Everyday,Transport
+TX521941,2025-03-26,Chemist Warehouse,-173.47,Savings,Healthcare
+TX354615,2025-03-25,Noel Leeming,-66.12,ANZ Everyday,Electronics
+TX187813,2025-03-25,New World Wellington,-87.79,Visa Debit,Groceries
+TX392030,2025-03-25,Spotify AU,-147.15,Visa Debit,Entertainment
+TX743569,2025-03-24,Bunnings Warehouse,-78.68,Visa Debit,Home Improvement
+TX791257,2025-03-24,Freelance Transfer,1207.74,Savings,Income
+TX701132,2025-03-24,Noel Leeming,-191.55,Savings,Electronics
+TX386153,2025-03-24,Countdown Mt Eden,-57.64,Visa Debit,Groceries
+TX302077,2025-03-23,Salary Payment,1538.34,ANZ Everyday,Income
+TX549410,2025-03-23,Freelance Transfer,2605.93,Savings,Income
+TX138392,2025-03-22,ASB Visa Debit,-160.83,Savings,General Spending
+TX581244,2025-03-22,Chemist Warehouse,-182.3,Visa Debit,Healthcare
+TX922258,2025-03-22,ASB Visa Debit,-121.87,Credit Card,General Spending
+TX156211,2025-03-21,Noel Leeming,-136.81,Savings,Electronics
+TX854551,2025-03-21,Gym NZ Ltd,-107.0,Savings,Fitness
