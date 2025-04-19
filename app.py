@@ -7,11 +7,11 @@ import random
 from dotenv import load_dotenv
 import os
 
-# Load .env and get Mongo URI
+# Load environment variables
 load_dotenv()
 MONGO_URI = os.getenv("MONGO_URI")
 
-# MongoDB Setup
+# MongoDB setup
 client = MongoClient(MONGO_URI)
 db = client["SmartFinance"]
 collection = db["transactions"]
@@ -87,22 +87,22 @@ def generate_fake_transactions(n=3):
 st.title("💸 SmartFinance Dashboard")
 st.markdown("Live personal finance simulator powered by MongoDB + Streamlit")
 
-# Safe generate + rerun block
+# Generate button with safe rerun
 if st.button("➕ Generate Random Transactions"):
     try:
         generate_fake_transactions(random.randint(2, 5))
         st.success("New data added! Refreshing...")
-        st.experimental_rerun()
+        st.rerun()
     except Exception as e:
         st.error(f"❌ Failed to generate transactions: {e}")
 
-# Tag merchants
+# Categorise uncategorised merchants
 auto_tag_new_merchants()
 
-# Load data
+# Load and process data
 df = get_data()
 
-# Daily Summary
+# === Daily Summary ===
 today = datetime.today().date()
 daily_df = df[df["date"].dt.date == today]
 
@@ -131,7 +131,7 @@ else:
     top_today.index = range(1, len(top_today) + 1)
     st.dataframe(top_today)
 
-# All-Time Overview
+# === All-Time Overview ===
 st.subheader("📈 All-Time Overview")
 col1, col2 = st.columns(2)
 col1.metric("🟢 Total Income", f"${df[df['amount'] > 0]['amount'].sum():.2f}")
@@ -159,6 +159,6 @@ top_merchants = (
 top_merchants.index = range(1, len(top_merchants) + 1)
 st.dataframe(top_merchants)
 
-# Full Table
+# === Full Table ===
 st.subheader("📋 All Transactions")
 st.dataframe(df.sort_values(by="date", ascending=False).reset_index(drop=True))
