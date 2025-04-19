@@ -11,11 +11,12 @@ import os
 load_dotenv()
 MONGO_URI = os.getenv("MONGO_URI")
 
-# === MongoDB Setup ===
+# MongoDB Setup
 client = MongoClient(MONGO_URI)
 db = client["SmartFinance"]
 collection = db["transactions"]
 
+# Known merchants + categories
 KNOWN_MERCHANTS = {
     "Countdown Grey Lynn": "Groceries",
     "Uber Eats": "Food Delivery",
@@ -32,13 +33,21 @@ ACCOUNTS = ["ANZ Everyday", "Credit Card", "Visa Debit"]
 # === Functions ===
 
 def get_data():
-    data = list(collection.find())
-    df = pd.DataFrame(data)
-    if "_id" in df.columns:
-        df.drop(columns=["_id"], inplace=True)
-    df["date"] = pd.to_datetime(df["date"])
-    df["amount"] = df["amount"].astype(float)
-    return df
+    try:
+        data = list(collection.find())
+        if not data:
+            st.warning("✅ Connected to MongoDB, but no transactions found.")
+        else:
+            st.success(f"✅ Loaded {len(data)} transactions from MongoDB.")
+        df = pd.DataFrame(data)
+        if "_id" in df.columns:
+            df.drop(columns=["_id"], inplace=True)
+        df["date"] = pd.to_datetime(df["date"])
+        df["amount"] = df["amount"].astype(float)
+        return df
+    except Exception as e:
+        st.error(f"❌ MongoDB connection failed: {e}")
+        return pd.DataFrame()
 
 def auto_tag_new_merchants(threshold=80):
     unknowns = list(collection.find({
@@ -68,23 +77,32 @@ def generate_fake_transactions(n=3):
             "account": random.choice(ACCOUNTS),
             "category": category
         }
-        collection.insert_one(txn)
+        try:
+            collection.insert_one(txn)
+        except Exception as e:
+            st.error(f"❌ Failed to insert transaction: {e}")
 
-# === Streamlit UI ===
+# === Streamlit App ===
 
 st.title("💸 SmartFinance Dashboard")
 st.markdown("Live personal finance simulator powered by MongoDB + Streamlit")
 
+# Safe generate + rerun block
 if st.button("➕ Generate Random Transactions"):
-    generate_fake_transactions(random.randint(2, 5))
-    st.success("New data added! Refreshing...")
-    st.experimental_rerun()
+    try:
+        generate_fake_transactions(random.randint(2, 5))
+        st.success("New data added! Refreshing...")
+        st.experimental_rerun()
+    except Exception as e:
+        st.error(f"❌ Failed to generate transactions: {e}")
 
-# Categorise unknowns
+# Tag merchants
 auto_tag_new_merchants()
+
+# Load data
 df = get_data()
 
-# === Daily Summary ===
+# Daily Summary
 today = datetime.today().date()
 daily_df = df[df["date"].dt.date == today]
 
@@ -113,7 +131,7 @@ else:
     top_today.index = range(1, len(top_today) + 1)
     st.dataframe(top_today)
 
-# === All-Time Overview ===
+# All-Time Overview
 st.subheader("📈 All-Time Overview")
 col1, col2 = st.columns(2)
 col1.metric("🟢 Total Income", f"${df[df['amount'] > 0]['amount'].sum():.2f}")
@@ -141,6 +159,6 @@ top_merchants = (
 top_merchants.index = range(1, len(top_merchants) + 1)
 st.dataframe(top_merchants)
 
-# === Full Table ===
+# Full Table
 st.subheader("📋 All Transactions")
 st.dataframe(df.sort_values(by="date", ascending=False).reset_index(drop=True))
